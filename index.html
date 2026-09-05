@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content Creation Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <img src="assets/bujang-kreator-logo.png" alt="Bujang Kreator" />
+        </div>
+        <nav class="stepper" aria-label="Tahapan form">
+          <button class="step is-active" type="button" data-step-button="0">
+            <span>01</span>
+            <strong>Identitas Instansi</strong>
+            <small>Fondasi & karakter</small>
+          </button>
+          <button class="step" type="button" data-step-button="1">
+            <span>02</span>
+            <strong>Content Pillar</strong>
+            <small>Kategori komunikasi</small>
+          </button>
+          <button class="step" type="button" data-step-button="2">
+            <span>03</span>
+            <strong>Content Planning</strong>
+            <small>Kalender & platform</small>
+          </button>
+          <button class="step" type="button" data-step-button="3">
+            <span>04</span>
+            <strong>Content Brief</strong>
+            <small>Isi detail desain</small>
+          </button>
+          <button class="step" type="button" data-step-button="4">
+            <span>05</span>
+            <strong>Visual Direction</strong>
+            <small>Visualisasi aset</small>
+          </button>
+        </nav>
+      </aside>
+
+      <section class="workspace">
+        <div class="context-pill" id="contextPill">
+          <i data-lucide="info"></i>
+          <span>Identitas Aktif: <strong id="contextSchool">Belum diisi</strong> | Kesan: <strong id="contextMood">-</strong> | Fokus: <strong id="contextFocus">-</strong></span>
+        </div>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="stepLabel">Langkah 1 dari 5</p>
+            <h2 id="pageTitle">Identitas Digital Instansi</h2>
+          </div>
+          <button id="downloadPdf" class="primary" type="button">
+            <i data-lucide="download"></i>
+            <span>Download PDF Tahap Ini</span>
+          </button>
+        </header>
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <form id="journeyForm" autocomplete="off">
+          <section class="panel is-active" data-step="0">
+            <div class="section-title">
+              <span>1</span>
+              <div>
+                <h2>Kenali Identitas Instansimu</h2>
+                <p>Fondasi utama untuk menentukan suara, karakter, dan visual konten.</p>
+              </div>
+            </div>
+            <div class="identity-layout">
+              <div>
+                <div class="grid two">
+                  <label>Nama Instansi / Organisasi *<input name="schoolName" placeholder="Contoh: Yayasan Cipta Karya Nusantara" /></label>
+                  <label>Jenis Instansi *
+                    <select name="institutionType">
+                      <option>Instansi / Organisasi</option>
+                      <option>Sekolah / Madrasah</option>
+                      <option>Kampus</option>
+                      <option>Komunitas</option>
+                      <option>Yayasan</option>
+                      <option>Bisnis / Brand</option>
+                    </select>
+                  </label>
+                </div>
+                <label>Logo Instansi</label>
+                <label class="upload-box" id="logoUploadBox">
+                  <input id="logoFile" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+                  <i data-lucide="upload-cloud"></i>
+                  <strong>Upload Logo</strong>
+                  <em id="logoUploadStatus">Belum ada file</em>
+                  <small id="logoFileName">PNG, JPG, WEBP maks. 2MB</small>
+                </label>
+                <label>Slogan / Tagline Instansi<input name="tagline" placeholder="Contoh: Berkarya, Melayani, Berdampak" /></label>
+                <label>Deskripsi Singkat Instansi *<textarea name="institutionDescription" placeholder="Ceritakan singkat profil, fokus, dan karakter instansi..."></textarea></label>
+                <label>Nilai / Karakter Instansi</label>
+                <div class="check-grid compact">
+                  <label><input type="checkbox" name="values" value="Religius" /> Religius</label>
+                  <label><input type="checkbox" name="values" value="Disiplin" /> Disiplin</label>
+                  <label><input type="checkbox" name="values" value="Kreatif" /> Kreatif</label>
+                  <label><input type="checkbox" name="values" value="Kolaboratif" /> Kolaboratif</label>
+                  <label><input type="checkbox" name="values" value="Peduli" /> Peduli</label>
+                  <label><input type="checkbox" name="values" value="Lainnya" /> Lainnya</label>
+                </div>
+                <input name="otherValues" placeholder="Tuliskan nilai lainnya..." />
+                <label>Keunggulan Utama / Ciri Khas Instansi *<textarea name="strengths" placeholder="Contoh: Program olimpiade, fasilitas lengkap, jaringan alumni, budaya belajar..."></textarea></label>
+                <label>Aset</label>
+                <div class="check-grid compact">
+                  <label><input type="checkbox" name="assets" value="Foto kegiatan" /> Foto Kegiatan</label>
+                  <label><input type="checkbox" name="assets" value="Foto lokasi" /> Foto Lokasi</label>
+                  <label><input type="checkbox" name="assets" value="Pencapaian" /> Pencapaian</label>
+                  <label><input type="checkbox" name="assets" value="Testimoni" /> Testimoni</label>
+                  <label><input type="checkbox" name="assets" value="Video" /> Video</label>
+                  <label><input type="checkbox" name="assets" value="Lainnya" /> Lainnya</label>
+                </div>
+                <input name="otherAssets" placeholder="Tuliskan aset lainnya..." />
+              </div>
+              <aside class="identity-preview">
+                <h3>Preview Identitas</h3>
+                <div class="logo-preview"><i data-lucide="school"></i></div>
+                <strong id="identityName">Nama Instansi</strong>
+                <small id="identityTagline">Slogan Instansi</small>
+                <p>Nilai Utama:</p>
+                <div class="mini-pills" id="identityValues">
+                  <span>-</span><span>-</span><span>-</span>
+                </div>
+                <p>Keunggulan:</p>
+                <div class="skeleton-lines"><span></span><span></span><span></span></div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="panel" data-step="1">
+            <div class="section-title green">
+              <span>2</span>
+              <div>
+                <h2>Tentukan Content Pillar Anda</h2>
+                <p>Pilih pilar konten utama dan tentukan fokus komunikasinya.</p>
+              </div>
+            </div>
+            <label>Pilih Pilar Konten (minimal 4)</label>
+            <div class="pillar-grid">
+              <label><input type="checkbox" name="pillars" value="Profil Instansi" /> <i data-lucide="building-2"></i><strong>Profil Instansi</strong><small>Tentang identitas, visi, layanan, dan fasilitas</small></label>
+              <label><input type="checkbox" name="pillars" value="Aktivitas Instansi" /> <i data-lucide="users"></i><strong>Aktivitas</strong><small>Kegiatan, program, agenda, dan dokumentasi</small></label>
+              <label><input type="checkbox" name="pillars" value="Pencapaian" /> <i data-lucide="trophy"></i><strong>Pencapaian</strong><small>Prestasi, capaian tim, penghargaan, dan dampak</small></label>
+              <label><input type="checkbox" name="pillars" value="Edukasi" /> <i data-lucide="book-open"></i><strong>Edukasi</strong><small>Tips, insight, pengetahuan, dan informasi penting</small></label>
+              <label><input type="checkbox" name="pillars" value="Pengumuman" /> <i data-lucide="megaphone"></i><strong>Pengumuman</strong><small>Informasi penting, jadwal, kebijakan</small></label>
+              <label><input type="checkbox" name="pillars" value="Program & Layanan" /> <i data-lucide="file-text"></i><strong>Program & Layanan</strong><small>Produk, layanan, program, atau penawaran utama</small></label>
+              <label><input type="checkbox" name="pillars" value="Ucapan & Momen" /> <i data-lucide="heart"></i><strong>Ucapan & Momen</strong><small>Hari besar, ucapan, momen spesial</small></label>
+              <label><input type="checkbox" name="pillars" value="Kolaborasi" /> <i data-lucide="handshake"></i><strong>Kolaborasi</strong><small>Kerja sama, kunjungan, mitra</small></label>
+            </div>
+            <label>Pilar Konten Lainnya<input name="otherPillar" placeholder="Tulis pillar tambahan jika diperlukan" /></label>
+            <div class="detail-card">
+              <div class="section-strip"><span>DETAIL PILAR</span><strong>Konfigurasi Fokus</strong></div>
+              <label>Tujuan Utama Pilar Ini<textarea name="pillarGoal" placeholder="Contoh: Menunjukkan kredibilitas instansi dan mengapresiasi pencapaian tim."></textarea></label>
+              <label>Contoh Rencana Topik / Hashtag Pendukung<input name="pillarTopics" placeholder="Program unggulan, profil tim, pencapaian terbaru, #KaryaBerdampak" /></label>
+            </div>
+            <div class="selected-box">
+              <div class="selected-heading">
+                <h3>Pilar Konten yang Dipilih</h3>
+              </div>
+              <div id="selectedPillars" class="selected-list"></div>
+            </div>
+          </section>
+
+          <section class="panel" data-step="2">
+            <div class="section-title orange">
+              <span>3</span>
+              <div>
+                <h2>Buat Content Planning</h2>
+                <p>Kembangkan pillar menjadi rencana konten.</p>
+              </div>
+            </div>
+            <div class="master-note">
+              <i data-lucide="database"></i>
+              <span>Planning akan mengambil pilar dari tahap Content Pillar yang sudah disimpan.</span>
+            </div>
+            <div class="planning-meta">
+              <label>Periode Perencanaan<input name="planningPeriod" placeholder="Contoh: September 2026" /></label>
+              <label>Frekuensi Publikasi
+                <select name="publishFrequency">
+                  <option>2x/minggu</option>
+                  <option>3x/minggu</option>
+                  <option>4x/minggu</option>
+                  <option>Custom</option>
+                </select>
+              </label>
+              <label>Platform Utama
+                <select name="mainPlatform">
+                  <option>Instagram</option>
+                  <option>TikTok</option>
+                  <option>Website</option>
+                  <option>Facebook</option>
+                </select>
+              </label>
+            </div>
+            <div class="table-actions">
+              <p class="tip">Mulai dengan 1-2 konten untuk setiap pilar. Tambah atau ubah nanti.</p>
+              <button id="addPlan" class="primary small" type="button">
+                <i data-lucide="plus"></i>
+                <span>Tambah Konten</span>
+              </button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Pilar</th><th>Judul / Topik</th><th>Tujuan</th><th>Format</th><th>Jadwal</th><th></th></tr></thead>
+                <tbody id="planRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel" data-step="3">
+            <div class="section-title purple">
+              <span>4</span>
+              <div>
+                <h2>Buat Content Brief</h2>
+                <p>Pilih satu konten dan lengkapi detailnya.</p>
+              </div>
+            </div>
+            <div class="master-note">
+              <i data-lucide="database"></i>
+              <span>Brief akan mengambil daftar konten dari Content Planning yang sudah disimpan.</span>
+            </div>
+            <label>Pilih Konten dari Content Planning<select name="selectedContent" id="selectedContent"></select></label>
+            <label>Caption<textarea name="caption" placeholder="Tulis caption yang menjelaskan konten, manfaat, dan ajakan untuk audiens..."></textarea></label>
+            <label>Hashtag<textarea name="hashtags" placeholder="#NamaInstansi #ProgramUnggulan #KaryaBerdampak"></textarea></label>
+          </section>
+
+          <section class="panel" data-step="4">
+            <div class="section-title pink">
+              <span>5</span>
+              <div>
+                <h2>Tentukan Visual Direction</h2>
+                <p>Arahkan tampilan visual konten yang akan dibuat.</p>
+              </div>
+            </div>
+            <div class="selected-content-card">
+              <span>KONTEN TERPILIH</span>
+              <strong id="visualSelectedTitle">Brief belum dipilih</strong>
+              <small id="visualSelectedMeta">Platform dan format mengikuti brief.</small>
+            </div>
+            <div class="visual-layout">
+              <div>
+                <label>Kesan & Mood Visual (pilih hingga 3)<input name="mood" placeholder="Contoh: Modern, Profesional, Ceria" /></label>
+                <label>Gaya Layout & Desain Kreatif
+                  <select name="layoutStyle">
+                    <option>Clean Corporate</option>
+                    <option>Modern Editorial</option>
+                    <option>Bold Typography</option>
+                    <option>Photo Based</option>
+                  </select>
+                </label>
+                <label>Sumber Hero Gambar Utama
+                  <select name="heroSource">
+                    <option>Foto Resmi Kegiatan Instansi</option>
+                    <option>Hasilkan Gambar dengan AI Assistant</option>
+                    <option>Tipografi Saja Tanpa Gambar</option>
+                  </select>
+                </label>
+                <div class="palette-builder">
+                  <div class="field-heading">
+                    <label>Palette Warna</label>
+                    <button id="addColor" class="ghost-button small" type="button">
+                      <i data-lucide="plus"></i>
+                      <span>Tambah Warna</span>
+                    </button>
+                  </div>
+                  <div id="colorRows" class="color-rows"></div>
+                  <input name="colors" type="hidden" />
+                </div>
+                <div class="gradient-builder">
+                  <div class="grid two">
+                    <label>Mode Warna
+                      <select name="colorMode" id="colorMode">
+                        <option value="solid">Solid / Palette</option>
+                        <option value="linear">Linear Gradient</option>
+                        <option value="radial">Radial Gradient</option>
+                      </select>
+                    </label>
+                    <label>Arah Gradasi
+                      <select name="gradientDirection" id="gradientDirection">
+                        <option value="90deg">Kiri ke kanan</option>
+                        <option value="180deg">Atas ke bawah</option>
+                        <option value="135deg">Diagonal</option>
+                        <option value="45deg">Diagonal balik</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="gradient-preview" id="gradientPreview"></div>
+                </div>
+                <label>Gaya Visual<select name="visualStyle"><option>Modern & Clean</option><option>Formal & Institusional</option><option>Ceria & Playful</option><option>Elegan & Premium</option><option>Editorial</option></select></label>
+                <label>Hero Visual<input name="heroVisual" placeholder="Contoh: Tim sedang berkegiatan, produk utama, suasana layanan" /></label>
+                <label>Elemen Pendukung<textarea name="supportingElements" placeholder="Icon, pattern, dokumentasi kegiatan, elemen brand, badge..."></textarea></label>
+                <label>Keyword untuk AI<textarea name="aiKeywords" placeholder="professional team, achievement, community, modern, clean, trustworthy..."></textarea></label>
+              </div>
+              <aside class="reference-panel">
+                <h3>Referensi Visual</h3>
+                <label class="upload-box small-upload" id="visualUploadBox">
+                  <input id="visualFile" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+                  <i data-lucide="image-plus"></i>
+                  <strong>Upload Gambar Referensi</strong>
+                  <em id="visualUploadStatus">Belum ada file</em>
+                  <small id="visualFileName">PNG, JPG, WEBP maks. 2MB</small>
+                </label>
+                <h3>Contoh Referensi</h3>
+                <div class="reference-grid">
+                  <span><i data-lucide="user-check"></i></span>
+                  <span><i data-lucide="sparkles"></i></span>
+                  <span><i data-lucide="building-2"></i></span>
+                  <span><i data-lucide="award"></i></span>
+                </div>
+              </aside>
+            </div>
+          </section>
+        </form>
+
+        <footer class="nav-actions">
+          <button id="prevStep" class="ghost-button" type="button">
+            <i data-lucide="arrow-left"></i>
+            <span>Kembali</span>
+          </button>
+          <button id="saveDraft" class="ghost-button" type="button">
+            <i data-lucide="check"></i>
+            <span>Simpan Tahap</span>
+          </button>
+          <button id="nextStep" class="primary" type="button">
+            <span>Lanjut</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </footer>
+      </section>
+    </main>
+
+    <div class="pdf-stage" aria-hidden="true">
+      <div id="pdfPage" class="paper">
+        <div class="pdf-cover">
+          <p class="pdf-kicker">Content Creation Journey</p>
+          <h2 id="previewTitle">Nama Instansi</h2>
+          <p id="pdfStepTitle">Ringkasan Tahap</p>
+        </div>
+        <div id="summaryContent"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
